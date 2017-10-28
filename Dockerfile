@@ -1,17 +1,17 @@
 #
 # GitLab CI: Android v0.2
 #
-# https://hub.docker.com/r/jangrewe/gitlab-ci-android/
-# https://git.faked.org/jan/gitlab-ci-android
+# https://hub.docker.com/r/muzili/gitlab-ci-android/
+# https://github.com/muzili/gitlab-ci-android
 #
 
 FROM ubuntu:17.04
-MAINTAINER Jan Grewe <jan@faked.org>
+MAINTAINER Joshua Lee <muzili@gmail.com>
 
 ENV VERSION_SDK_TOOLS "3859397"
 
 ENV ANDROID_HOME "/sdk"
-ENV PATH "$PATH:${ANDROID_HOME}/tools"
+ENV PATH "$PATH:${ANDROID_HOME}/tools:${ANDROID_HOME}/build-tools/26.0.2"
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update && \
@@ -27,6 +27,7 @@ RUN apt-get -qq update && \
       lib32ncurses5 \
       lib32z1 \
       unzip \
+      zip \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN rm -f /etc/ssl/certs/java/cacerts; \
