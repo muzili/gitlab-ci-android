@@ -11,7 +11,7 @@ MAINTAINER Joshua Lee <muzili@gmail.com>
 ENV VERSION_SDK_TOOLS "3859397"
 
 ENV ANDROID_HOME "/sdk"
-ENV PATH "$PATH:${ANDROID_HOME}/tools:${ANDROID_HOME}/build-tools/26.0.2"
+ENV PATH "$PATH:${ANDROID_HOME}/tools:${ANDROID_HOME}/build-tools/27.0.1"
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update && \
